@@ -1,7 +1,7 @@
 # tools
 from utils import TextDocumentGenerator
 
-EA_TEMPLATE = "../md_templates/ea_agreement.md"
+EA_TEMPLATE = "../md_templates/employee_agreement.md"
 
 
 def update_employee_agreement_template(
