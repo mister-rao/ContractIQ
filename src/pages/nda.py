@@ -3,7 +3,7 @@ import streamlit as st
 
 from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
 from langgraph.graph import MessagesState
-from pages.graphs.nda_graph import graph
+from pages.graphs.nda import graph
 
 config = {"configurable": {"thread_id": 1}, "recursion_limit": 40}
 
