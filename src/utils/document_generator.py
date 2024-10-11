@@ -6,6 +6,7 @@ import markdown
 
 class TextDocumentGenerator:
     _template: Template
+    content: str
 
     def __init__(self, template_path):
         with open(template_path, "r", encoding="utf-8") as file:
@@ -17,9 +18,8 @@ class TextDocumentGenerator:
 
     def update(self, data):
         # replace placeholders with corresponding values in the content
-        return self._template.render(data)
+        self.content = self._template.render(data)
 
-    @staticmethod
-    def generate_pdf(text: str):
-        html = markdown.markdown(text)
+    def generate_pdf(self):
+        html = markdown.markdown(self.content)
         HTML(string=html).write_pdf("nda.pdf")

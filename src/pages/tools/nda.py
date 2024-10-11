@@ -3,6 +3,8 @@ from utils import TextDocumentGenerator
 
 NDA_TEMPLATE = "../md_templates/nda.md"
 
+nda = None
+
 
 def update_nda_template(
     day: str,
@@ -21,7 +23,7 @@ def update_nda_template(
     authorized_signatory_date: str,
     employee_name: str,
     employee_date: str,
-) -> str:
+) -> None:
     """
     Updates a Non-Disclosure Agreement (NDA) template with the given values for placeholders.
 
@@ -42,11 +44,9 @@ def update_nda_template(
         authorized_signatory_date: str: The date when the authorized signatory signs the agreement.
         employee_name: str: The name of the employee signing the NDA.
         employee_date: str: The date when the employee signs the NDA.
-
-    Returns:
-        draft: str: draft NDA template with filled attributes
     """
-    template = TextDocumentGenerator(NDA_TEMPLATE)
+    global nda
+    nda = TextDocumentGenerator(NDA_TEMPLATE)
 
     data = {
         "day": day,
@@ -67,7 +67,7 @@ def update_nda_template(
         "arbitration_language": arbitration_language,
     }
 
-    return template.update(data)
+    return nda.update(data)
 
 
 def save_nda_as_pdf(draft: str) -> None:
@@ -76,7 +76,8 @@ def save_nda_as_pdf(draft: str) -> None:
     Args:
         draft: str: finalised draft of the NDA
     """
-    TextDocumentGenerator.generate_pdf(draft)
+    global nda
+    nda.generate_pdf(draft)
 
 
 tools = [update_nda_template, save_nda_as_pdf]

@@ -1,7 +1,9 @@
 # tools
-from utils import TextDocumentGenerator
+from src.utils import TextDocumentGenerator
 
-EA_TEMPLATE = "../md_templates/employee_agreement.md"
+EA_TEMPLATE = "md_templates/employee_agreement.jinja"
+
+employee_agreement = None
 
 
 def update_employee_agreement_template(
@@ -28,7 +30,7 @@ def update_employee_agreement_template(
     governing_law: str,
     jurisdiction: str,
     employee_designation: str,
-) -> str:
+) -> None:
     """
     Updates an Employee Agreement template with the given values for placeholders.
 
@@ -56,12 +58,10 @@ def update_employee_agreement_template(
         governing_law: str: The governing law for the agreement.
         jurisdiction: str: The jurisdiction for the agreement.
         employee_designation: str: The designation of the employee.
-
-    Returns:
-        draft: str: The updated Employee Agreement template with filled placeholders.
     """
 
-    template = TextDocumentGenerator(EA_TEMPLATE)
+    global employee_agreement
+    employee_agreement = TextDocumentGenerator(EA_TEMPLATE)
 
     data = {
         "day": day,
@@ -89,16 +89,13 @@ def update_employee_agreement_template(
         "employee_designation": employee_designation,
     }
 
-    return template.update(data)
+    employee_agreement.update(data)
 
 
-def save_ea_as_pdf(draft: str) -> None:
-    """Save Employee Agreement as a PDF document
-
-    Args:
-        draft: str: finalised draft of the Employee Agreement
-    """
-    TextDocumentGenerator.generate_pdf(draft)
+def save_ea_as_pdf() -> None:
+    """Save Employee Agreement as a PDF document"""
+    global employee_agreement
+    employee_agreement.generate_pdf()
 
 
 tools = [update_employee_agreement_template, save_ea_as_pdf]

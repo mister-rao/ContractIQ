@@ -15,7 +15,7 @@ Ask for the required details in groups, don't overwhelm user by asking all at on
 """
 )
 
-llm = ChatOpenAI(model="gpt-3.5-turbo")
+llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
 
 llm_with_tools = llm.bind_tools(tools)
 
