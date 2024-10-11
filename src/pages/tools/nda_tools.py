@@ -1,10 +1,7 @@
 # tools
 from utils import TextDocumentGenerator
 
-NDA_TEMPLATE = "../templates/nda.md"
-
-
-template = TextDocumentGenerator(NDA_TEMPLATE)
+NDA_TEMPLATE = "../md_templates/nda.md"
 
 
 def update_nda_template(
@@ -45,13 +42,22 @@ def update_nda_template(
         authorized_signatory_date: str: The date when the authorized signatory signs the agreement.
         employee_name: str: The name of the employee signing the NDA.
         employee_date: str: The date when the employee signs the NDA.
+
+    Returns:
+        draft: str: draft NDA template with filled attributes
     """
+    template = TextDocumentGenerator(NDA_TEMPLATE)
+
     data = {
         "day": day,
         "month": month,
         "year": year,
         "role": role,
         "company_name": company_name,
+        "employee_name": employee_name,
+        "employee_date": employee_date,
+        "authorized_signatory_name": authorized_signatory_name,
+        "authorized_signatory_date": authorized_signatory_date,
         "survival_period": str(survival_period),
         "post_binding_agreement_period": str(post_binding_agreement_period),
         "governing_laws": governing_laws,
@@ -59,18 +65,18 @@ def update_nda_template(
         "arbitration_act": arbitration_act,
         "arbitration_city": arbitration_city,
         "arbitration_language": arbitration_language,
-        "authorized_signatory_name": authorized_signatory_name,
-        "authorized_signatory_date": authorized_signatory_date,
-        "employee_name": employee_name,
-        "employee_date": employee_date,
     }
 
-    template.update(data)
+    return template.update(data)
 
 
-def save_nda_as_pdf() -> None:
-    """Save NDA as a PDF document"""
-    template.generate_pdf()
+def save_nda_as_pdf(draft: str) -> None:
+    """Save NDA as a PDF document
+
+    Args:
+        draft: str: finalised draft of the NDA
+    """
+    TextDocumentGenerator.generate_pdf(draft)
 
 
 tools = [update_nda_template, save_nda_as_pdf]

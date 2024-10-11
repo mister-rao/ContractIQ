@@ -17,8 +17,9 @@ class TextDocumentGenerator:
 
     def update(self, data):
         # replace placeholders with corresponding values in the content
-        self._output = self._template.render(data)
+        return self._template.render(data)
 
-    def generate_pdf(self):
-        html = markdown.markdown(self._output)
+    @staticmethod
+    def generate_pdf(text: str):
+        html = markdown.markdown(text)
         HTML(string=html).write_pdf("nda.pdf")

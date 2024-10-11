@@ -2,11 +2,11 @@
 
 This Agreement made on this the **{{ day }}** day of **{{ month }}**, **{{ year }}**
 
-AND WHEREAS, the {{ role }} shall, in the course of employment with {{ company_name }}, have access to and become familiar with certain classified information and materials and proprietary information belonging to or licensed by {{ company_name }} and/or to its principal (and its subsidiaries/Affiliates) or its suppliers and vendors or its customers. Further, the {{ role }} also has access to Confidential Personal Information of other employees, third-party personnel, or any other individuals during the course of employment.
+**AND WHEREAS**, the {{ role }} shall, in the course of employment with {{ company_name }}, have access to and become familiar with certain classified information and materials and proprietary information belonging to or licensed by {{ company_name }} and/or to its principal (and its subsidiaries/Affiliates) or its suppliers and vendors or its customers. Further, the {{ role }} also has access to Confidential Personal Information of other employees, third-party personnel, or any other individuals during the course of employment.
 
-AND WHEREAS, it is necessary and expedient for {{ company_name }} to protect and safeguard the confidentiality of the said classified information and material, proprietary information, and Confidential Personal Information.
+**AND WHEREAS**, it is necessary and expedient for {{ company_name }} to protect and safeguard the confidentiality of the said classified information and material, proprietary information, and Confidential Personal Information.
 
-IN CONNECTION WITH THE ABOVE, THE PARTIES HEREBY AGREE AS FOLLOWS:
+**IN CONNECTION WITH THE ABOVE, THE PARTIES HEREBY AGREE AS FOLLOWS:**
 
 1. **“Confidential and/or proprietary Information”** shall mean and include any information disclosed by {{ company_name }} to the {{ role }} either directly or indirectly, in writing, orally, by inspection of tangible objects (including, without limitation, documents, prototypes, samples, media, documentation, discs, and code). Confidential information shall include, without limitation, any materials, trade secrets, network information, configurations, trademarks, brand names, know-how, business and marketing plans, financial and operational information, and all other non-public information, material, or data relating to the current and/or future business and operations of {{ company_name }} and analysis, compilations, studies, summaries, extracts, or other documentation prepared by {{ company_name }}. Confidential Information may also include information disclosed to the Receiving Party by third parties on behalf of {{ company_name }}.
 
@@ -22,10 +22,10 @@ IN CONNECTION WITH THE ABOVE, THE PARTIES HEREBY AGREE AS FOLLOWS:
 
 7. Confidential Information, however, shall not include any information which the Receiving Party can show:
 
-   - i) is in or comes into the public domain otherwise than through a breach of this Agreement or the fault of the Receiving Party; or
-   - ii) was already in its possession free of any such restriction prior to receipt from the Disclosing Party; or
-   - iii) was independently developed by the Receiving Party without making use of the Confidential Information; or
-   - iv) has been approved for release or use (in either case without restriction) by written authorization of the Disclosing Party.
+   - i. is in or comes into the public domain otherwise than through a breach of this Agreement or the fault of the Receiving Party; or
+   - ii. was already in its possession free of any such restriction prior to receipt from the Disclosing Party; or
+   - iii. was independently developed by the Receiving Party without making use of the Confidential Information; or
+   - iv. has been approved for release or use (in either case without restriction) by written authorization of the Disclosing Party.
 
 8. In the event either Party receives a summons or other validly issued administrative or judicial process requiring the disclosure of Confidential Information of the other Party, the Receiving Party shall promptly notify the Disclosing Party. The Receiving Party may disclose Confidential Information to the extent such disclosure is required by law, rule, regulation, or legal process; provided however, that, to the extent practicable, the Receiving Party shall give prompt written notice of any such request for such information to the Disclosing Party, and agrees to cooperate with the Disclosing Party, at the Disclosing Party’s expense, to the extent permissible and practicable, to challenge the request or limit the scope thereof, as the Disclosing Party may reasonably deem appropriate.
 
@@ -55,7 +55,7 @@ It being further clarified that notwithstanding anything contained herein, in ca
 
 17. This Agreement may be executed in two counterparts, each of which will be deemed to be an original, and all of which, when taken together, shall be deemed to constitute one and the same agreement.
 
-18. The relationship between both the Parties to this Agreement shall be on a principal-to-principal basis and nothing in this agreement shall be deemed to have created a relationship of an agent or partner between the Parties and none of the employees of {{ company_name }} shall be considered as employees of {{ other_party_name }}.
+18. The relationship between both the Parties to this Agreement shall be on a principal-to-principal basis and nothing in this agreement shall be deemed to have created a relationship of an agent or partner between the Parties and none of the employees of COMPANY shall be considered as employees of PART 1.
 
 19. This Agreement shall be governed by the laws of {{ governing_laws }}. Both parties irrevocably submit to the exclusive jurisdiction of the Courts in {{ jurisdiction_city }}, for any action or proceeding regarding this Agreement. Any dispute or claim arising out of or in connection herewith, or the breach, termination, or invalidity thereof, shall be settled by arbitration in accordance with the provisions of the Procedure of the {{ arbitration_act }}. The arbitration tribunal shall be composed of a sole arbitrator, and such arbitrator shall be appointed mutually by the Parties. The place of arbitration shall be {{ arbitration_city }}, and the arbitration proceedings shall take place in the {{ arbitration_language }} language.
 
