@@ -68,3 +68,4 @@ local_settings.py
 .pants.d/
 *.ipynb
 .DS_Store
+*.pdf
