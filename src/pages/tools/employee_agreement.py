@@ -1,12 +1,10 @@
 # tools
-from src.utils import TextDocumentGenerator
+from utils import TextDocumentGenerator
 
-EA_TEMPLATE = "md_templates/employee_agreement.jinja"
-
-employee_agreement = None
+EA_TEMPLATE = "templates/employee_agreement.jinja"
 
 
-def update_employee_agreement_template(
+def save_employee_agreement(
     day: str,
     month: str,
     year: str,
@@ -60,7 +58,6 @@ def update_employee_agreement_template(
         employee_designation: str: The designation of the employee.
     """
 
-    global employee_agreement
     employee_agreement = TextDocumentGenerator(EA_TEMPLATE)
 
     data = {
@@ -90,12 +87,7 @@ def update_employee_agreement_template(
     }
 
     employee_agreement.update(data)
+    employee_agreement.generate_pdf("employee_agreement")
 
 
-def save_ea_as_pdf() -> None:
-    """Save Employee Agreement as a PDF document"""
-    global employee_agreement
-    employee_agreement.generate_pdf()
-
-
-tools = [update_employee_agreement_template, save_ea_as_pdf]
+tools = [save_employee_agreement]

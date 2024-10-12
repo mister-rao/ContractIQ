@@ -1,5 +1,4 @@
 from jinja2 import Template
-from IPython.display import display, Markdown, Latex
 from weasyprint import HTML
 import markdown
 
@@ -20,6 +19,6 @@ class TextDocumentGenerator:
         # replace placeholders with corresponding values in the content
         self.content = self._template.render(data)
 
-    def generate_pdf(self):
+    def generate_pdf(self, filename):
         html = markdown.markdown(self.content)
-        HTML(string=html).write_pdf("nda.pdf")
+        HTML(string=html).write_pdf(f"{filename}.pdf")

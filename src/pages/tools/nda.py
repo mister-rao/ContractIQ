@@ -1,12 +1,11 @@
 # tools
 from utils import TextDocumentGenerator
+import streamlit as st
 
-NDA_TEMPLATE = "../md_templates/nda.md"
-
-nda = None
+NDA_TEMPLATE = "templates/nda.jinja"
 
 
-def update_nda_template(
+def save_nda(
     day: str,
     month: str,
     year: str,
@@ -25,7 +24,7 @@ def update_nda_template(
     employee_date: str,
 ) -> None:
     """
-    Updates a Non-Disclosure Agreement (NDA) template with the given values for placeholders.
+    Saves a Non-Disclosure Agreement (NDA) template with the given values for placeholders.
 
     Args:
         day: str: The day of the month when the agreement is created.
@@ -45,7 +44,6 @@ def update_nda_template(
         employee_name: str: The name of the employee signing the NDA.
         employee_date: str: The date when the employee signs the NDA.
     """
-    global nda
     nda = TextDocumentGenerator(NDA_TEMPLATE)
 
     data = {
@@ -67,17 +65,8 @@ def update_nda_template(
         "arbitration_language": arbitration_language,
     }
 
-    return nda.update(data)
+    nda.update(data)
+    nda.generate_pdf("nda")
 
 
-def save_nda_as_pdf(draft: str) -> None:
-    """Save NDA as a PDF document
-
-    Args:
-        draft: str: finalised draft of the NDA
-    """
-    global nda
-    nda.generate_pdf(draft)
-
-
-tools = [update_nda_template, save_nda_as_pdf]
+tools = [save_nda]
