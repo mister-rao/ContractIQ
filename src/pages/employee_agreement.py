@@ -50,6 +50,5 @@ if prompt := st.chat_input():
     st.chat_message("user").write(prompt)
     response = graph.invoke({"messages": st.session_state.ea_messages}, config)
     msg = response["messages"][-1].content
-    print(msg)
     st.session_state.ea_messages.append(SystemMessage(content=msg))
     st.chat_message("assistant").write(msg)

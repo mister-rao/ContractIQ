@@ -12,7 +12,6 @@ class TextDocumentGenerator:
             self._content = file.read()
 
         # Create a Jinja2 template object
-
         self._template = Template(self._content)
 
     def update(self, data):

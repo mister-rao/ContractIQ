@@ -15,6 +15,7 @@ streamlit = "^1.39.0"
 jinja2 = "^3.1.4"
 weasyprint = "^62.3"
 markdown = "^3.7"
+watchdog = "^5.0.3"
 
 
 [build-system]
