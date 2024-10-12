@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Streamlit",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "streamlit",
+      "env": {
+        "STREAMLIT_APP": "app.py",
+        "STREAMLIT_ENV": "development",
+        "AWS_PROFILE": "mega_root",
+        "PYTHONPATH": "${workspaceRoot}/src"
+      },
+      "args": ["run", "src/home.py"],
+      "jinja": true
+    }
+  ]
+}
